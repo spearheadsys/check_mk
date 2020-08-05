@@ -1,18 +1,8 @@
 #!/usr/bin/python
-
-# OIDs used:
-# JUNIPER-MIB::jnxOperatingDescr    .1.3.6.1.4.1.2636.3.1.13.1.5
-# JUNIPER-MIB::jnxOperatingBuffer   .1.3.6.1.4.1.2636.3.1.13.1.11
-# JUNIPER-MIB::jnxBoxDescr          .1.3.6.1.4.1.2636.3.1.2.0
-
-# Scan function looks for 'Juniper' in jnxBoxDescr
-
-# Author: Mike Julian - mike@mikejulian.com - http://mikejulian.com
-
 juniper_mem_default_levels = (80.0, 90.0)
+fruTypesMem = ['Routing Engine', 'FPC', 'PIC']
 
 def inventory_juniper_mem(info):
-    fruTypesMem = ['Routing Engine', 'FPC', 'PIC']
     inventory = []
     for line in info:
         for fru in fruTypesMem:
